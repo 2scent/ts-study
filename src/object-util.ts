@@ -12,17 +12,26 @@ type Entries<T> = {
 
 console.log(entries(obj1));
 
+const ent1 = Object.entries(obj1);
+const ent2 = entries(obj1);
+
 const keys = Object.keys as <T>(o: T) => Keys<T>;
 
 type Keys<T> = (keyof T)[];
 
 console.log(keys(obj1));
 
+const keys1 = Object.keys(obj1);
+const keys2 = keys(obj1);
+
 const values = Object.values as <T>(o: T) => Values<T>;
 
 type Values<T> = T[keyof T][];
 
 console.log(values(obj1));
+
+const val1 = Object.values(obj1);
+const val2 = values(obj1);
 
 const obj2 = {
   a: '1',
